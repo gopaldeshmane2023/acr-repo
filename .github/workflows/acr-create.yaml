@@ -17,7 +17,7 @@ jobs:
       - name: Deploy ACR with ARM Template
         uses: azure/arm-deploy@v1.0.9
         with:
-          subscriptionId: "subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          subscriptionId: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
           resourceGroupName: "my-resource"
           template: "./acr.json"
           deploymentName: "Pnode23srk"
