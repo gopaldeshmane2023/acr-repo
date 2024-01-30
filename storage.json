@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "storageAccounts_znode10storagesdk_name": {
-            "defaultValue": "znode10storagesdk",
+        "storageAccounts_rostorage45gd_name": {
+            "defaultValue": "rostorage45gd",
             "type": "String"
         }
     },
@@ -12,10 +12,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2023-01-01",
-            "name": "[parameters('storageAccounts_znode10storagesdk_name')]",
+            "name": "[parameters('storageAccounts_rostorage45gd_name')]",
             "location": "centralus",
             "tags": {
-                "znode10storagesdk": "znode10storagesdk"
+                "rostorage45gd": "rostorage45gd"
             },
             "sku": {
                 "name": "Standard_LRS",
@@ -79,9 +79,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "sku": {
                 "name": "Standard_LRS",
@@ -112,9 +112,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/fileServices",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "sku": {
                 "name": "Standard_LRS",
@@ -136,9 +136,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/queueServices",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "properties": {
                 "cors": {
@@ -149,9 +149,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "properties": {
                 "cors": {
@@ -162,10 +162,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default/znode10-pluginserver-sdk')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default/znode10-pluginserver-sdk')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_znode10storagesdk_name'), 'default')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_rostorage45gd_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "properties": {
                 "immutableStorageWithVersioning": {
@@ -179,10 +179,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('storageAccounts_znode10storagesdk_name'), '/default/znode10sdk')]",
+            "name": "[concat(parameters('storageAccounts_rostorage45gd_name'), '/default/znode10sdk')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_znode10storagesdk_name'), 'default')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_znode10storagesdk_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_rostorage45gd_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_rostorage45gd_name'))]"
             ],
             "properties": {
                 "immutableStorageWithVersioning": {
