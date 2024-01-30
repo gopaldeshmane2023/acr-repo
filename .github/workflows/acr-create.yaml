@@ -18,5 +18,6 @@ jobs:
         uses: azure/arm-deploy@v1.0.9
         with:
           subscription: "subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          resourceGroup: "my-resource"
           template: "./acr.json"
           deploymentName: "Pnode23srk"
