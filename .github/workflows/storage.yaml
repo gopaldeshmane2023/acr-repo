@@ -1,0 +1,23 @@
+name: Create storage with ARM Template
+
+on:
+  push:
+    branches: [ main ]  # Trigger on pushes to the main branch
+
+jobs:
+  create-storage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Azure
+        uses: azure/login@v1.6.1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+      - name: Deploy storage with ARM Template
+        uses: azure/arm-deploy@v1.0.9
+        with:
+          subscriptionId: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          resourceGroupName: "my-storageresource"
+          template: "./storage.json"
+          deploymentName: "rostorage45gd"
