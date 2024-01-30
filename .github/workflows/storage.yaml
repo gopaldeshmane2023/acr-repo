@@ -18,6 +18,6 @@ jobs:
         uses: azure/arm-deploy@v1.0.9
         with:
           subscriptionId: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-          resourceGroupName: "my-storageresource"
+          resourceGroupName: "my-resource"
           template: "./storage.json"
           deploymentName: "rostorage45gd"
