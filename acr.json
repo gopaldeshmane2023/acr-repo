@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "registries_Znode10SDK_name": {
-            "defaultValue": "Znode10SDK",
+        "registries_Pnode23srk_name": {
+            "defaultValue": "Pnode23srk",
             "type": "String"
         }
     },
@@ -12,7 +12,7 @@
         {
             "type": "Microsoft.ContainerRegistry/registries",
             "apiVersion": "2023-11-01-preview",
-            "name": "[parameters('registries_Znode10SDK_name')]",
+            "name": "[parameters('registries_Pnode23srk_name')]",
             "location": "centralus",
             "tags": {
                 "Znode10-SDK": "Znode10-SDK"
@@ -60,9 +60,9 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
             "apiVersion": "2023-11-01-preview",
-            "name": "[concat(parameters('registries_Znode10SDK_name'), '/_repositories_admin')]",
+            "name": "[concat(parameters('registries_Pnode23srk_name'), '/_repositories_admin')]",
             "dependsOn": [
-                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Znode10SDK_name'))]"
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Pnode23srk_name'))]"
             ],
             "properties": {
                 "description": "Can perform all read, write and delete operations on the registry",
@@ -78,9 +78,9 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
             "apiVersion": "2023-11-01-preview",
-            "name": "[concat(parameters('registries_Znode10SDK_name'), '/_repositories_pull')]",
+            "name": "[concat(parameters('registries_Pnode23srk_name'), '/_repositories_pull')]",
             "dependsOn": [
-                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Znode10SDK_name'))]"
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Pnode23srk_name'))]"
             ],
             "properties": {
                 "description": "Can pull any repository of the registry",
@@ -92,9 +92,9 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
             "apiVersion": "2023-11-01-preview",
-            "name": "[concat(parameters('registries_Znode10SDK_name'), '/_repositories_pull_metadata_read')]",
+            "name": "[concat(parameters('registries_Pnode23srk_name'), '/_repositories_pull_metadata_read')]",
             "dependsOn": [
-                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Znode10SDK_name'))]"
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Pnode23srk_name'))]"
             ],
             "properties": {
                 "description": "Can perform all read operations on the registry",
@@ -107,9 +107,9 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
             "apiVersion": "2023-11-01-preview",
-            "name": "[concat(parameters('registries_Znode10SDK_name'), '/_repositories_push')]",
+            "name": "[concat(parameters('registries_Pnode23srk_name'), '/_repositories_push')]",
             "dependsOn": [
-                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Znode10SDK_name'))]"
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Pnode23srk_name'))]"
             ],
             "properties": {
                 "description": "Can push to any repository of the registry",
@@ -122,9 +122,9 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
             "apiVersion": "2023-11-01-preview",
-            "name": "[concat(parameters('registries_Znode10SDK_name'), '/_repositories_push_metadata_write')]",
+            "name": "[concat(parameters('registries_Pnode23srk_name'), '/_repositories_push_metadata_write')]",
             "dependsOn": [
-                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Znode10SDK_name'))]"
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_Pnode23srk_name'))]"
             ],
             "properties": {
                 "description": "Can perform all read and write operations on the registry",
