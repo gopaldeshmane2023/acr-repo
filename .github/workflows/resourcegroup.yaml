@@ -22,6 +22,5 @@ jobs:
       uses: Azure/arm-deploy@v1.0.9
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        resourceGroupName: gopal-group  # Replace with the desired resource group name
         template: ./resourcegroup.json  # Replace with the correct path to your ARM template
         parameters: ./parameters.json  # Replace with the correct path to your parameter file
