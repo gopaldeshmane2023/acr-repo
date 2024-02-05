@@ -1,8 +1,8 @@
 name: Create storage with ARM Template
 
 on:
-  push:
-    branches: [ main ]  # Trigger on pushes to the main branch
+ # push:
+  #  branches: [ main ]  # Trigger on pushes to the main branch
 
 jobs:
   create-storage:
