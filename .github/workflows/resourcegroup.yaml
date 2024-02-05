@@ -1,0 +1,27 @@
+name: Deploy ARM Template
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Azure CLI
+      uses: azure/login@v1.6.1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy ARM Template
+      uses: Azure/arm-deploy@v1.0.9
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        resourceGroupName: gopal-group  # Replace with the desired resource group name
+        template: ./resourcegroup.json  # Replace with the correct path to your ARM template
+        parameters: ./parameters.json  # Replace with the correct path to your parameter file
