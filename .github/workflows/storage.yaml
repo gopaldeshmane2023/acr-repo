@@ -1,9 +1,7 @@
 name: Create storage with ARM Template
 
 on:
- # push:
-  #  branches: [ main ]  # Trigger on pushes to the main branch
-
+  workflow_dispatch:
 jobs:
   create-storage:
     runs-on: ubuntu-latest
