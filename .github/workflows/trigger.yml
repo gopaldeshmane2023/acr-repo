@@ -16,3 +16,4 @@ jobs:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: gopaldeshmane2023/parameter
           event-type: label
+          client-payload: '{"key": "build"}'
