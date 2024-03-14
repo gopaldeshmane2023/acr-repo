@@ -15,4 +15,4 @@ jobs:
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: gopaldeshmane2023/parameter
-          event-type: blank.yml
+          event-type: label
